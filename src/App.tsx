@@ -11,13 +11,20 @@ export default function App() {
   const addItem = () => {
     if(usrInput) {
       const newItem: ListItem = { id: Date.now(), text: usrInput };
-      setItems(prevItems => [...prevItems, newItem]);
+      setItems([...items, newItem]);
       setUsrInput('');
     }
   };
 
   const removeItem = ({id, text}: ListItem) => {
-    console.log("YAY DELETE");
+    //console.log(text);
+    const item: ListItem = {
+      id: id,
+      text: text,
+    };
+    const index = items.findIndex((element) => element.id===id);
+    //console.log(index)
+    setItems((prevItem) => prevItem.filter((item,i) => i!==index));
   };
 
   return (
@@ -35,7 +42,6 @@ export default function App() {
       />
       <div>
         {items.map(item => (
-          // <li key={item.id}>{item.text}</li>
           <Row key={item.id} id={item.id} text={item.text} onClickHandler={removeItem}/>
         ))}
       </div>
