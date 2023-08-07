@@ -4,7 +4,7 @@ import Row from "./Row";
 import { ListItem } from './types'; 
 import { RowProps } from './types'; 
 
-function App() {
+export default function App() {
   const [usrInput, setUsrInput] = useState("");
   const [items, setItems] = useState<ListItem[]>([]);
 
@@ -42,5 +42,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
