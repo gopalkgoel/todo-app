@@ -4,5 +4,14 @@
 
 .mainInput {
     text-align: center;
-    height: 100px;
+}
+
+.Row {
+    text-align: left;
+    margin-left: 600px;
+}
+
+.Button {
+    width: 10px;
+    height: 20px;
 }
