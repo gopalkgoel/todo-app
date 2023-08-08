@@ -27,6 +27,10 @@ export default function App() {
     setItems((prevItem) => prevItem.filter((item,i) => i!==index));
   };
 
+  const deleteAll = () => {
+    setItems([]);
+  };
+
   return (
     <div className="App">
       <input
@@ -40,6 +44,7 @@ export default function App() {
           }
         }}
       />
+      <button onClick={deleteAll} className="Button"></button>
       <div>
         {items.map(item => (
           <Row key={item.id} id={item.id} text={item.text} onClickHandler={removeItem}/>
